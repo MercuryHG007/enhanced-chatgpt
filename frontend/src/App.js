@@ -13,7 +13,7 @@ function App() {
   const [chatLog, setChatLog] = useState([
     {
       user: "gpt",
-      message: "How can I help you today ?",
+      message: "Hi there! How can I help you?",
     }
   ]);
 

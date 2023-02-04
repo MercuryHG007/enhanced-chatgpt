@@ -1,4 +1,3 @@
-// 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
 
 const { Configuration, OpenAIApi } = require("openai");
 const express = require('express')
@@ -7,7 +6,7 @@ const cors = require('cors')
 
 const configuration = new Configuration({
     organization: "org-ZsTXjLknAY9FgUT05rxz84J8",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
