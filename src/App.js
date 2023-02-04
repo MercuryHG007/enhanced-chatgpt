@@ -67,6 +67,12 @@ function App() {
           <span>+</span>
           New Chat
         </div>
+        <div>
+          <h1>
+            ENHANCED CHATGPT
+          </h1>
+          <p>by Harshit Garg</p>
+        </div>
         <div className='models'>
           <h3>Models</h3>
           <select
