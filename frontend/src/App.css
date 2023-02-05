@@ -20,6 +20,12 @@
   justify-content: space-between;
 }
 
+/* .sidemenu-title-container{
+  background-image: url('../public/logo2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+
 .side-menu-button {
   /* margin-top: 50px; */
   margin-top: 10px;

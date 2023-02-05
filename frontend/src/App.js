@@ -2,6 +2,8 @@ import './normal.css';
 import './App.css';
 import { useState, useEffect } from 'react';
 
+import logo from './logo2.png';
+
 function App() {
 
   const [input, setInput] = useState('');
@@ -64,10 +66,11 @@ function App() {
           <span>+</span>
           New Chat
         </div>
-        <div>
+        <div className='sidemenu-title-container'>
           <h1>
             ENHANCED CHATGPT
           </h1>
+          <img src={logo} alt='logo'width={70} />
           <p>by Harshit Garg</p>
         </div>
         <div className='models'>

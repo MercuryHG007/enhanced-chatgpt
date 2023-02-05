@@ -1,8 +1,8 @@
-
 const { Configuration, OpenAIApi } = require("openai");
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const path = require('path')
 
 const configuration = new Configuration({
     organization: "org-ZsTXjLknAY9FgUT05rxz84J8",
@@ -15,6 +15,7 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static(path.join(__dirname, '/public')))
 
 const port = 3080
 
