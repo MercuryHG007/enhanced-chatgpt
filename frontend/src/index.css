@@ -12,3 +12,18 @@ body {
 *{
   font-family: 'Poppins', sans-serif;
 }
+
+/* decorate scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

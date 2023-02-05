@@ -27,6 +27,7 @@ app.post('/', async(req,res) => {
         model: `${currentModel}`,
         prompt: `${message}`,
         max_tokens: 2049,
+        top_p: 1,
         temperature: 0.5,
     });
     res.json({

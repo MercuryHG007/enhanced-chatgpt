@@ -2,9 +2,6 @@ import './normal.css';
 import './App.css';
 import { useState, useEffect } from 'react';
 
-
-
-
 function App() {
 
   const [input, setInput] = useState('');
@@ -57,7 +54,7 @@ function App() {
     });
     const data = await response.json();
     setChatLog([...chatLogNew, { user: "gpt", message: `${data.message}` }])
-    console.log(data.message);
+    console.log("Message from GPT", data.message);
   }
 
   return (
@@ -102,14 +99,42 @@ function App() {
           ))}
         </div>
         <div className='chat-input-holder'>
-          <form onSubmit={handleSubmit}>
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className='chat-input-textarea'
-              rows={1}
-            ></input>
-          </form>
+          <div className='chat-input-form-holder'>
+            <form onSubmit={handleSubmit}>
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className='chat-input-textarea'
+                rows={1}
+              ></input>
+              <button className='chat-input-button' type='submit'>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25" 
+                  height="25" 
+                  viewBox="0 0 256.000000 256.000000"
+                  preserveAspectRatio="xMidYMid meet">
+                  <g transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
+                    fill="#ffffff" stroke="none">
+                    <path d="M1260 2074 c-705 -265 -1210 -461 -1217 -471 -7 -9 -13 -21 -13 -27
+                            0 -5 101 -112 225 -236 l225 -226 -50 -349 c-49 -341 -50 -350 -31 -368 18
+                            -18 26 -17 342 56 l324 76 250 -250 c138 -137 255 -249 261 -249 6 0 18 6 27
+                            13 15 10 909 2365 924 2433 5 24 -21 55 -45 53 -9 -1 -559 -206 -1222 -455z
+                            m61 -336 l-783 -541 -181 181 c-100 100 -179 183 -177 185 8 5 1904 715 1914
+                            716 5 1 -343 -243 -773 -541z m960 355 c-10 -27 -175 -466 -366 -978 -192
+                            -511 -350 -932 -352 -935 -2 -2 -96 88 -209 202 l-206 205 572 777 c315 427
+                            574 776 576 776 2 0 -5 -21 -15 -47z m-261 4 c0 -1 -341 -343 -758 -760 l-759
+                            -759 38 263 c25 174 42 265 51 270 7 4 330 228 718 497 725 504 710 494 710
+                            489z m-78 -259 c-38 -51 -252 -343 -477 -648 -224 -305 -409 -557 -411 -559
+                            -2 -2 -105 -27 -230 -56 l-226 -52 703 703 c387 387 705 704 707 704 1 0 -29
+                            -42 -66 -92z"
+                      />
+                  </g>
+                </svg>
+              </button>
+            </form>
+          </div>
+
         </div>
       </section>
     </div>
@@ -136,16 +161,16 @@ const ChatMessage = ({ message }) => {
           {message.user === "me" &&
             <svg
               width="25"
-              height="25" 
-              xmlns="http://www.w3.org/2000/svg" 
+              height="25"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512">
-              <path 
+              <path
                 fill='slategrey'
                 d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z"></path>
             </svg>
           }
         </div>
-        <div className={`message ${message.user === "me" && "me"}`}>
+        <div className={`message ${message.user === "me" ? "me" : "chatgpt"}`}>
           {message.message}
         </div>
       </div>
